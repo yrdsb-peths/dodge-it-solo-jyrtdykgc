@@ -18,6 +18,11 @@ public class Apple extends Actor
         if(getX() <= 0){
             resetApple();
         }
+        if(isTouching(Hero.class)){
+            SadFace sadFace = new SadFace();
+            getWorld().addObject(sadFace, 300, 200);
+            getWorld().removeObject(this);
+        }
         // Add your action code here.
     }
     public void resetApple(){
